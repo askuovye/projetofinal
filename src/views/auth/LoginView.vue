@@ -22,7 +22,11 @@
         </div>
         <div>
             <button>Entrar com Facebook</button>
-            <button>Criar nova conta</button>
+            <button>
+                <router-link to="/register">
+                    Criar nova conta
+                </router-link>
+            </button>
             <img>
         </div>
     </section>
