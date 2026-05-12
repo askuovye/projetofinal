@@ -1,16 +1,22 @@
 <script>
-
+  import { useRoute, useRouter } from "vue-router";
+  import { useAuthStore } from "@/stores/auth";
+  import { user.serivce } from "@/services/user.service";
 </script>
 
 <template>
-  <div class="desktop">
-    <nav>
+  <div>
+    <nav class="desktop-navbar">
       <button>
         <i class="bi bi-instagram"></i>
       </button>
       <button>
         <i class="bi bi-house-door"></i>
         <span>Home</span>
+      </button>
+      <button>
+        <i class="bi bi-search"></i>
+        <span>Search</span>
       </button>
       <button>
         <i class="bi bi-plus-lg"></i>
@@ -24,10 +30,22 @@
         <span>Logout</span>
       </button>
     </nav>
+
+    <nav class="mobile-topbar">
+      <h2>InstaClone</h2>
+      <div>
+        <div>
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder="Pesquisar" />
+        </div>
+      </div>
+      <div class="search-result"></div>
+    </nav>
+
     <main>
       <router-view />
     </main>
-    <section>
+    <section class="desktop-sidebar">
       <div>
         <span>Profile</span>
       </div>
