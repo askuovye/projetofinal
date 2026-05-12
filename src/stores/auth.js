@@ -44,9 +44,7 @@ export const useAuthStore = defineStore("auth", {
           password,
           password2: confirmPassword,
         };
-        console.log("Sending registration payload:", payload);
         const response = await authService.register(payload);
-        console.log("Registration response:", response);
         this.setToken(response.data.access_token, response.data.user);
       } catch (error) {
         console.error("Registration failed:", error);
